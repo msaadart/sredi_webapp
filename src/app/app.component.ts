@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, EventEmitter, Output } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'dashboard';
+  @ViewChild('drawer') drawer!: MatDrawer;
+
+  toggleDrawer(): void {
+    this.drawer.toggle();
+  }
 }

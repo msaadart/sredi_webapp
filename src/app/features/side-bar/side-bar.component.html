@@ -1,0 +1,137 @@
+<div class="sredi-logo">
+  <img src="assets/images/sidebar/sredi.svg" alt="sredi">
+</div>
+
+<div class="user-info">
+  <mat-menu #profileMenu="matMenu">
+    <button mat-menu-item>Profile</button>
+    <button mat-menu-item>Settings</button>
+    <button mat-menu-item>Logout</button>
+  </mat-menu>
+  <button mat-button [matMenuTriggerFor]="profileMenu">
+    <div class="img_name">
+      <img src="assets/images/sidebar/Rectangle 20.png" alt="Profile" />
+      <span><b>John Doe</b> <br>
+        Admin
+      </span>
+      <mat-icon>keyboard_arrow_down</mat-icon>
+    </div>
+
+  </button>
+</div>
+
+<h2 class="main-title">GENERAL</h2>
+<mat-nav-list class="add-scrollbar">
+  <mat-list-item class="active">
+    <div class="icon_text">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="home-2">
+          <path id="Icon"
+            d="M14 20V14C14 12.8954 13.1046 12 12 12C10.8954 12 10 12.8954 10 14V20M10.9833 3.60011L4.98335 7.14177C4.37395 7.50149 4 8.15646 4 8.8641V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V8.8641C20 8.15646 19.6261 7.50149 19.0167 7.14177L13.0167 3.60011C12.3894 3.22988 11.6106 3.22988 10.9833 3.60011Z"
+            stroke="#454545" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+      </svg>
+      <span>Overview</span>
+    </div>
+  </mat-list-item>
+  <mat-expansion-panel [class.mat-elevation-z0]="true">
+    <mat-expansion-panel-header>
+      <div class="icon_text">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path id="Icon"
+            d="M20 11.6211V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V11.6211M7.5 9.75C7.5 10.9926 6.49264 12 5.25 12C4.09397 12 3.14157 11.1282 3.01442 10.0062C2.99524 9.83688 3.02176 9.66657 3.06477 9.50173L4.10996 5.49516C4.3397 4.6145 5.13506 4 6.04519 4H17.9548C18.8649 4 19.6603 4.6145 19.89 5.49516L20.9352 9.50173C20.9782 9.66657 21.0048 9.83688 20.9856 10.0062C20.8584 11.1282 19.906 12 18.75 12C17.5074 12 16.5 10.9926 16.5 9.75M7.5 9.75C7.5 10.9926 8.50736 12 9.75 12C10.9926 12 12 10.9926 12 9.75M7.5 9.75L8 4M12 9.75C12 10.9926 13.0074 12 14.25 12C15.4926 12 16.5 10.9926 16.5 9.75M12 9.75V4M16.5 9.75L16 4"
+            stroke="#888888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <span>Navigation 02</span>
+      </div>
+    </mat-expansion-panel-header>
+    <mat-nav-list>
+
+      <a class="icon_text" mat-list-item routerLink="#">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="note-01">
+            <path id="Icon"
+              d="M13 3H7C5.89543 3 5 3.89543 5 5V19C5 20.1046 5.89543 21 7 21H17C18.1046 21 19 20.1046 19 19V9M13 3L19 9M13 3V8C13 8.55228 13.4477 9 14 9H19M9 13H15M9 17H15"
+              stroke="#091836" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </svg>
+        <span> Navigation 03</span>
+      </a>
+      <a class="icon_text" mat-list-item routerLink="#">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="user-group">
+            <path id="Icon"
+              d="M18.5051 19H20C21.1046 19 22.0669 18.076 21.716 17.0286C21.1812 15.4325 19.8656 14.4672 17.5527 14.1329M14.5001 10.8645C14.7911 10.9565 15.1244 11 15.5 11C17.1667 11 18 10.1429 18 8C18 5.85714 17.1667 5 15.5 5C15.1244 5 14.7911 5.04354 14.5001 5.13552M9.5 14C13.1135 14 15.0395 15.0095 15.716 17.0286C16.0669 18.076 15.1046 19 14 19H5C3.89543 19 2.93311 18.076 3.28401 17.0286C3.96047 15.0095 5.88655 14 9.5 14ZM9.5 11C11.1667 11 12 10.1429 12 8C12 5.85714 11.1667 5 9.5 5C7.83333 5 7 5.85714 7 8C7 10.1429 7.83333 11 9.5 11Z"
+              stroke="#888888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </svg>
+        <span> Navigation 04</span>
+      </a>
+      <a class="icon_text" mat-list-item routerLink="#">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="line-chart">
+            <path id="Icon" d="M3 16.5L9 10L13 16L21 6.5" stroke="#888888" stroke-width="1.4" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </g>
+        </svg>
+        <span> Navigation 06</span>
+      </a>
+    </mat-nav-list>
+  </mat-expansion-panel>
+</mat-nav-list>
+
+<h2 class="main-title">TOOLS</h2>
+<mat-nav-list>
+  <mat-list-item>
+    <div class="icon_text">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="settings">
+          <g id="Icon">
+            <path
+              d="M9.65227 4.56614C9.85562 3.65106 10.6672 3 11.6046 3H12.396C13.3334 3 14.145 3.65106 14.3483 4.56614L14.5513 5.47935C15.2124 5.73819 15.8245 6.09467 16.37 6.53105L17.2642 6.24961C18.1583 5.96818 19.128 6.34554 19.5967 7.15735L19.9923 7.84264C20.461 8.65445 20.303 9.68287 19.6122 10.3165L18.922 10.9496C18.9736 11.2922 19.0003 11.643 19.0003 12C19.0003 12.357 18.9736 12.7078 18.922 13.0504L19.6122 13.6835C20.303 14.3171 20.4611 15.3455 19.9924 16.1574L19.5967 16.8426C19.128 17.6545 18.1583 18.0318 17.2642 17.7504L16.37 17.4689C15.8245 17.9053 15.2124 18.2618 14.5513 18.5206L14.3483 19.4339C14.145 20.3489 13.3334 21 12.396 21H11.6046C10.6672 21 9.85562 20.3489 9.65227 19.4339L9.44933 18.5206C8.7882 18.2618 8.17604 17.9053 7.63058 17.4689L6.73639 17.7504C5.84223 18.0318 4.87258 17.6545 4.40388 16.8426L4.00823 16.1573C3.53953 15.3455 3.69755 14.3171 4.38836 13.6835L5.07858 13.0504C5.02702 12.7077 5.0003 12.357 5.0003 12C5.0003 11.643 5.02702 11.2922 5.07858 10.9496L4.38837 10.3165C3.69757 9.68288 3.53954 8.65446 4.00824 7.84265L4.4039 7.15735C4.8726 6.34554 5.84225 5.96818 6.7364 6.24962L7.63059 6.53106C8.17604 6.09467 8.7882 5.73819 9.44933 5.47935L9.65227 4.56614Z"
+              stroke="#888888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+            <path
+              d="M13.0003 12C13.0003 12.5523 12.5526 13 12.0003 13C11.448 13 11.0003 12.5523 11.0003 12C11.0003 11.4477 11.448 11 12.0003 11C12.5526 11 13.0003 11.4477 13.0003 12Z"
+              stroke="#888888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+        </g>
+      </svg>
+      <span>Account & Setting</span>
+    </div>
+  </mat-list-item>
+  <mat-list-item>
+    <div class="icon_text">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="help">
+          <path id="Icon"
+            d="M12 17H12.01M12 14C12.8906 12.0938 15 12.2344 15 10C15 8.5 14 7 12 7C10.4521 7 9.50325 7.89844 9.15332 9M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+            stroke="#888888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+      </svg>
+      <span>Help</span>
+    </div>
+  </mat-list-item>
+  <mat-list-item>
+    <div class="icon_text">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="moon">
+          <path id="Icon"
+            d="M19.5761 14.5765C18.7677 14.8513 17.9013 15.0003 17 15.0003C12.5817 15.0003 9 11.4186 9 7.00029C9 6.09888 9.14908 5.23229 9.42394 4.42383C6.26952 5.49607 4 8.48301 4 12C4 16.4183 7.58172 20 12 20C15.5169 20 18.5037 17.7307 19.5761 14.5765Z"
+            stroke="#888888" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" />
+        </g>
+      </svg>
+      <span>Dark Mode</span>
+      <mat-slide-toggle
+          class="example-margin"
+          [checked]="checked">
+      </mat-slide-toggle>
+    </div>
+  </mat-list-item>
+</mat-nav-list>
+
+<div class="help-section">
+  <h2>Need Assistance ?</h2>
+  <p>
+    For Report, Support or Suggestions, Please reach out to <b>success&#64;sred.io</b>
+  </p>
+</div>

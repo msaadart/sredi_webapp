@@ -1,0 +1,76 @@
+/* Welcome Section */
+.welcome-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 15px;
+  border-radius: 8px;
+
+  .welcome-message h2 {
+    margin: 0;
+    font-size: var(--font-size-large);
+    color: var(--Neutral-900);
+  }
+
+  .date-range {
+    font-size: var(--font-size);
+    background-color: var(--Neutral-100);
+    color: var(--Neutral-800);
+    margin-top: 8px;
+    padding: 5px 10px;
+    border-radius: 17px;
+    display: inline-flex;
+  }
+}
+
+.refresh-button {
+  background-color:var(--Neutral-900);
+  color:var(--white-background);
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+.refresh-button:hover {
+  background-color: var(--Neutral-800);
+}
+
+.refresh-icon {
+  font-size:var(--font-size);
+}
+
+/* Active Integrations Section */
+.active-integrations {
+  padding: 0 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  span{
+    margin-right: 15px;
+  }
+  .integrations-list {
+    display: flex;
+    gap: 10px;
+    span{
+      margin-right: 0;
+    }
+    .integration-tag {
+      cursor: pointer;
+      background-color: var(--cerulean-blue-200);
+      color: var(--Neutral-600);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: var(--font-size);
+    }
+    .integration-tag:hover{
+      background-color: var(--cerulean-blue-100);
+    }
+
+  }
+}

@@ -1,0 +1,41 @@
+<mat-toolbar color="primary" class="header-toolbar">
+  <!-- Left side: Search Input -->
+  <div class="left-section">
+    <a (click)="onToggleDrawer()" class="left-slide-btn">
+      <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="Panel-close">
+          <path id="Vector"
+            d="M21 3.5H3C2.175 3.5 1.5 4.175 1.5 5V20C1.5 20.825 2.175 21.5 3 21.5H21C21.825 21.5 22.5 20.825 22.5 20V5C22.5 4.175 21.825 3.5 21 3.5ZM7.5 20H3V5H7.5V20ZM21 11.75H13.35L16.05 9.05L15 8L10.5 12.5L15 17L16.05 15.95L13.35 13.25H21V20H9V5H21V11.75Z"
+            fill="#454545" />
+        </g>
+      </svg>
+    </a>
+    <div class="search">
+      <app-material-input
+      label="Search"
+      placeholder="Search here"
+      [control]="searchControl"
+      icon="search"
+      (iconClick)="onSearchIconClick()"
+    ></app-material-input>
+    </div>
+  </div>
+
+  <!-- Right side: Icons and Datepicker -->
+  <div class="right-section">
+
+    <div class="notify-btn">
+      <mat-icon matBadge="8"> email</mat-icon>
+      <mat-icon matBadge="8"> notifications</mat-icon>
+    </div>
+    <div class="date-range">
+      <app-date-picker
+        [isRange]="true"
+        [startPlaceholder]="'Start date'"
+        [endPlaceholder]="'End date'">
+      </app-date-picker>
+    </div>
+
+
+  </div>
+</mat-toolbar>
