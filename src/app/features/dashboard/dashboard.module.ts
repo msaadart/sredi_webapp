@@ -10,8 +10,7 @@ import { TimesheetSummaryComponent } from './timesheet-summary/timesheet-summary
 import { ProjectHoursComponent } from './project-hours/project-hours.component';
 import { EmployeeSummaryComponent } from './employee-summary/employee-summary.component';
 import { SrEdSummaryComponent } from './sr-ed-summary/sr-ed-summary.component';
-
-
+import { AgCharts } from 'ag-charts-angular';
 
 @NgModule({
   declarations: [
@@ -26,7 +25,8 @@ import { SrEdSummaryComponent } from './sr-ed-summary/sr-ed-summary.component';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    SharedModule
+    SharedModule,
+    AgCharts
   ]
 })
 export class DashboardModule { }

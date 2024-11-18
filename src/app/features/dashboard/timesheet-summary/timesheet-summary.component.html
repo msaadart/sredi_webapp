@@ -1,1 +1,19 @@
-<p>timesheet-summary works!</p>
+<div class="timesheet-summary">
+  <div class="summary-cards">
+    <div class="card" *ngFor="let item of summaryData">
+      <div class="card-header">
+        <span>{{ item.title }}</span>
+        <button *ngIf="item.action" class="action-button" >
+          {{ item.actionLabel }}
+        </button>
+      </div>
+      <div class="card-content">
+        <h2>{{ item.value }}</h2>
+        <div class="percentage-change" [ngClass]="item.change > 0 ? 'positive' : 'negative'">
+          <mat-icon>{{ item.change > 0 ? 'arrow_upward' : 'arrow_downward' }}</mat-icon>
+          {{ item.change }}%
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

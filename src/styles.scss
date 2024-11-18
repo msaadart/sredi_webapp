@@ -49,15 +49,19 @@ $dashboard-theme: mat.define-theme((
   --Neutral-600: #5D5D5D;
   --Neutral-500: #737373;
   --Neutral-200: #D1D1D1;
-  --Neutral-50: #F6F6F6;
   --Neutral-100: #E7E7E7;
+  --Neutral-50: #F6F6F6;
   --Medium-Grey: #949494;
   --charcoal-black:#292929;
   --secondary-color: #6C757D;
   --accent-color: #17A2B8;
-  --success-color: #28A745;
-  --danger-color: #EA3030;
-  --background-color: #F8F9FA;
+  --green-800: #53AF57;
+  --green-100:#E9F8EE;
+  --red-900:#B14040;
+  --red-800: #EA3030;
+  --red-100:#F8E9E9;
+  --white-background-200: #E3E3E3;
+  --white-background-100:#FBFBFB;
   --white-background: #FFFFFF;
   --font-family:  "Plus Jakarta Sans", sans-serif;
   --font-size: .9rem;
@@ -100,9 +104,10 @@ body {
 }
 
 
+
 //badge
 .mat-badge-content{
-  background-color: var(--danger-color) !important;
+  background-color: var(--red-800) !important;
   color: var(--white-background) !important;
   border-radius: 2px !important;
 }

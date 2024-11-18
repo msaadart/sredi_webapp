@@ -1,0 +1,72 @@
+.timesheet-summary {
+  h3 {
+    margin-bottom: 16px;
+  }
+
+  .summary-cards {
+    display: flex;
+    gap: 16px;
+  }
+
+  .card {
+    border: solid 1px var(--white-background-200);
+    background-color: var(--white-background-100);
+    border-radius: 8px;
+    padding: 16px;
+    width: 25%;
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+
+      .action-button {
+        background: none;
+        border: none;
+        font-weight: bold;
+        color: var(--Neutral-900);
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
+
+    .card-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h2 {
+        margin: 0;
+        font-size: var(--font-size-large);
+      }
+
+      .percentage-change {
+        display: flex;
+        align-items: center;
+        font-size: var(--font-size);
+
+        mat-icon {
+          font-size: var(--font-size);
+          height: 15px;
+        }
+
+        &.positive {
+          border-radius: 4px;
+          padding: 2px 3px;
+          background-color: var(--green-100);
+          color: var(--green-800);
+          font-size: var(--font-size);
+        }
+
+        &.negative {
+          border-radius: 4px;
+          padding: 2px 3px;
+          color: var(--red-800);
+          background-color: var(--red-100);
+          font-size: var(--font-size);
+        }
+      }
+    }
+  }
+}

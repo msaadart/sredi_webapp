@@ -1,0 +1,29 @@
+.chart-wrapper {
+  display: flex;
+  align-content:stretch;
+
+  .card{
+    border: solid 1px var(--white-background-200);
+    background-color: var(--white-background-100);
+    border-radius: 8px;
+    padding: 15px;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card2{
+    margin-left: 15px;
+    width: 70%;
+    display: flex;
+
+  }
+  bar{
+    flex: 1;
+    width: 100%;
+    height: auto;
+    gap: 10;
+  }
+}
+
+

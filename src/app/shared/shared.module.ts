@@ -15,8 +15,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { MatCardModule } from '@angular/material/card';
 import { MaterialInputComponent } from './material-input/material-input.component';
+
 import { ButtonComponent } from './button/button.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { CardComponent } from './card/card.component';
@@ -51,7 +52,8 @@ import { TableComponent } from './table/table.component';
     MatNativeDateModule,
     MatBadgeModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   exports:[
     MatSidenavModule,
@@ -70,7 +72,9 @@ import { TableComponent } from './table/table.component';
     MatBadgeModule,
     MaterialInputComponent,
     ButtonComponent,
-    DatePickerComponent
+    DatePickerComponent,
+    CardComponent,
+    ChartComponent
   ]
 })
 export class SharedModule { }
