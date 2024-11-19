@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AgChartTheme } from 'ag-charts-community';
 
 var myTheme: AgChartTheme = {
@@ -13,7 +13,7 @@ var myTheme: AgChartTheme = {
   selector: 'app-overall-hours',
   templateUrl: './overall-hours.component.html',
   styleUrl: './overall-hours.component.scss',
-  // changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OverallHoursComponent {
   public options: any = {

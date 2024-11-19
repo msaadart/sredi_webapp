@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormControl} from '@angular/forms';
 import {
   ColDef
@@ -10,7 +10,8 @@ import { DashboardServiceService } from '../dashboard-service.service';
 @Component({
   selector: 'app-employee-summary',
   templateUrl: './employee-summary.component.html',
-  styleUrl: './employee-summary.component.scss'
+  styleUrl: './employee-summary.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeSummaryComponent implements OnInit {
 

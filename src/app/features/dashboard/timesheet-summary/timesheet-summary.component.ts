@@ -1,10 +1,11 @@
 import { DashboardServiceService } from './../dashboard-service.service';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-timesheet-summary',
   templateUrl: './timesheet-summary.component.html',
-  styleUrl: './timesheet-summary.component.scss'
+  styleUrl: './timesheet-summary.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class TimesheetSummaryComponent implements OnInit {
