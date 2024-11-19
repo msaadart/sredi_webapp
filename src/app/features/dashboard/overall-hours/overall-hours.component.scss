@@ -18,12 +18,9 @@
     display: flex;
 
   }
-  bar{
-    flex: 1;
-    width: 100%;
-    height: auto;
-    gap: 10;
-  }
-}
 
+}
+bar{
+  width:100% !important;
+}
 

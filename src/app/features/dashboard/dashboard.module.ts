@@ -11,6 +11,8 @@ import { ProjectHoursComponent } from './project-hours/project-hours.component';
 import { EmployeeSummaryComponent } from './employee-summary/employee-summary.component';
 import { SrEdSummaryComponent } from './sr-ed-summary/sr-ed-summary.component';
 import { AgCharts } from 'ag-charts-angular';
+import { AgGridAngular } from "ag-grid-angular";
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { AgCharts } from 'ag-charts-angular';
     CommonModule,
     DashboardRoutingModule,
     SharedModule,
-    AgCharts
+    AgCharts,
+    AgGridAngular
   ]
 })
 export class DashboardModule { }

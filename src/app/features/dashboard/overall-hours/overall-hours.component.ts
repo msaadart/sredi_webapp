@@ -54,21 +54,17 @@ export class OverallHoursComponent {
     theme: myTheme,
     autoSize:true,
     data: [
-      { month: 'January', worked: 120, tracked: 100, overtime: 20 },
-      { month: 'January', worked: 110, tracked: 95, overtime: 15 },
-      { month: 'March', worked: 130, tracked: 110, overtime: 20 },
-      { month: 'April', worked: 100, tracked: 90, overtime: 10 },
-      { month: 'May', worked: 115, tracked: 100, overtime: 15 },
+      { month: 'January', worked: 120, tracked: 100 },
+      { month: 'January', worked: 110, tracked: 95 },
+      { month: 'March', worked: 130, tracked: 110},
+      { month: 'April', worked: 100, tracked: 90 },
+      { month: 'May', worked: 115, tracked: 100 },
 
     ],
 
     series: [
-      { type: 'bar', xKey: 'month', yKey: 'worked', yName: 'Worked Hours' },
-      { type: 'bar', xKey: 'month', yKey: 'tracked', yName: 'Tracked Hours' },
-      { type: 'bar', xKey: 'month', yKey: 'overtime', yName: 'Overtime Hours' },
-      { type: 'bar', xKey: 'month', yKey: 'worked', yName: 'Worked Hours' },
-      { type: 'bar', xKey: 'month', yKey: 'tracked', yName: 'Tracked Hours' },
-
+      { type: 'bar', xKey: 'month', yKey: 'worked', yName: 'Cumulative Hours' },
+      { type: 'bar', xKey: 'month', yKey: 'worked', yName: 'Total Hours' },
     ],
     axes: [
       {

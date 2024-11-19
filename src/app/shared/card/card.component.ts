@@ -8,9 +8,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
         <mat-card-header>
           <div class="header">
             <h3>{{ title }}</h3>
-            <button (click)="onClick()">
-              <mat-icon>{{ icon }}</mat-icon>
-            </button>
+            <div class="button-icon">
+              <app-button *ngIf="view">{{view}}</app-button>
+              <button (click)="onClick()">
+                <mat-icon>{{ icon }}</mat-icon>
+              </button>
+            </div>
           </div>
         </mat-card-header>
 
@@ -47,6 +50,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
                 background-color: var(--white-background);
                 border:0;
               }
+              .button-icon{
+                display:inline-flex;
+              }
             }
           }
         }
@@ -57,6 +63,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 export class CardComponent {
   @Input() title: string = '';
   @Input() icon: string | null = null;
+  @Input() view: string | null = null;
 
   @Output() clicked: EventEmitter<void> = new EventEmitter<void>();
 

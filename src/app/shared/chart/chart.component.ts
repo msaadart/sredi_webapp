@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { AgChartOptions } from "ag-charts-community";
 
 @Component({
   selector: 'app-chart',

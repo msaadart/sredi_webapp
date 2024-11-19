@@ -69,9 +69,11 @@
   border-radius: 12px;
   margin-bottom: 5px;
 }
-.mdc-list{
+
+.mdc-list {
   padding-right: 10px;
 }
+
 .mdc-list-item:hover::before {
   background-color: var(--cerulean-blue-100);
 }
@@ -168,7 +170,6 @@
 
 .add-scrollbar::-webkit-scrollbar-thumb {
   background-color: var(--Neutral-100);
-  // outline: 1px solid var(--Neutral-500);
 }
 
 // need assistance

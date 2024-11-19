@@ -1,0 +1,18 @@
+.table-header{
+  display: flex;
+  justify-content: space-between;
+  .button-filter-export{
+    display:inline-flex;
+  }
+}
+.table-custom {
+  display: flex;
+  flex-direction: column;
+  height: 250px !important;
+}
+
+#myGrid {
+  flex: 1 1 0px;
+  width: 100%;
+}
+

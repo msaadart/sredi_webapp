@@ -1,1 +1,14 @@
-<p>employee-summary works!</p>
+<div class="table-header">
+<div>
+  <app-material-input label="Search" placeholder="Search here" [control]="searchControl"
+  icon="search"></app-material-input>
+</div>
+<div class="button-filter-export">
+  <app-button icon="filter_list">Filter</app-button>
+  <app-button icon="cloud_download">Export</app-button>
+</div>
+</div>
+
+
+<ag-grid-angular [rowData]="rowData" [columnDefs]="columnDefs"
+  [class]="themeClass" class="table-custom" />

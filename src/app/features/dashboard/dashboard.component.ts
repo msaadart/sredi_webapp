@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ButtonComponent } from '../../shared/button/button.component';
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-quartz.css";
 
 @Component({
   selector: 'app-dashboard',
