@@ -70,3 +70,10 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .summary-cards {
+    flex-direction: column;
+  }
+  .card{width: auto !important;}
+}

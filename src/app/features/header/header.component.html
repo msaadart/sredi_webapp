@@ -10,14 +10,9 @@
         </g>
       </svg>
     </a>
-    <div class="search">
-      <app-material-input
-      label="Search"
-      placeholder="Search here"
-      [control]="searchControl"
-      icon="search"
-      (iconClick)="onSearchIconClick()"
-    ></app-material-input>
+    <div class="search" [ngClass]="{ 'show': !searchBar }">
+      <app-material-input label="Search" placeholder="Search here" [control]="searchControl" icon="search"
+        (iconClick)="onSearchIconClick()"></app-material-input>
     </div>
   </div>
 
@@ -25,13 +20,16 @@
   <div class="right-section">
 
     <div class="notify-btn">
-      <mat-icon matBadge="8"> email</mat-icon>
+      <mat-icon class="calendar" (click)="toggleVisibility('searchBar')"
+        [ngClass]="{ 'active': !searchBar }">search</mat-icon>
+      <mat-icon class="calendar" m={0} (click)="toggleVisibility('dateRange')"
+        [ngClass]="{ 'active': !dateRange }">calendar_today</mat-icon>
+      <mat-icon matBadge="2"> email</mat-icon>
       <mat-icon matBadge="8"> notifications</mat-icon>
+
     </div>
-    <div class="date-range">
-      <app-date-picker
-        [isRange]="true"
-        [startPlaceholder]="'Start date'"
+    <div class="date-range" [ngClass]="{ 'show': !dateRange }">
+      <app-date-picker label="Fiscal Period" [isRange]="true" [startPlaceholder]="'Start date'"
         [endPlaceholder]="'End date'">
       </app-date-picker>
     </div>

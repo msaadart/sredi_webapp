@@ -16,33 +16,59 @@ var myTheme: AgChartTheme = {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OverallHoursComponent {
+  list= [
+    { name: "Total Tracked Hours", hours:0.3300, month: 3 },
+    { name: "Total Worked Hours", hours: 0.6695, month: 3 },
+  ];
+  total = this.list.reduce((sum, d) => sum + d["hours"], 0);
+  numFormatter = new Intl.NumberFormat("en-US", {
+    style: "percent",
+    maximumFractionDigits: 0,
+  });
   public options: any = {
     theme: myTheme,
-    data: [
-      { asset: 'Total Worked Hours', amount: 600 },
-      { asset: 'Total Tracked Hours', amount: 400 },
-    ],
+    data:this.list,
+
     series: [
       {
-        type: 'donut',
-        angleKey: 'amount',
+        type: "donut",
+        //calloutLabelKey: "type",
+        angleKey: "hours",
+        sectorLabelKey: "hours",
+        calloutLabel: {
+          enabled: false,
+        },
+        legendItemKey: "name",
+        // sectorLabel: {
+        //   formatter: ({ data, sectorLabelKey }) => {
+        //     return this.numFormatter.format(datum[sectorLabelKey]);
+        //   },
+        // },
+        // title: {
+        //   text: "Annual Count",
+        // },
+        calloutLabelKey: "type",
         innerRadiusRatio: 0.7,
-        yName: 'asset',
         innerLabels: [
           {
-            text: 'Total Hours',
-            fontWeight: 'bold',
+            text: this.numFormatter.format(this.total),
+            fontSize: 24,
           },
           {
-            text: '1,000',
-            spacing: 1,
-            fontSize: 20,
-            color: '#091836',
+            text: "Total",
+            fontSize: 16,
+            spacing: 10,
           },
         ],
-        innerCircle: {
-          fill: '#FBFBFB',
-        },
+        // tooltip: {
+        //   renderer: ({ datum, calloutLabelKey, title, sectorLabelKey }) => {
+        //     return {
+        //       title,
+        //       content: `${datum[calloutLabelKey]}: ${numFormatter.format(datum[sectorLabelKey])}`,
+        //     };
+        //   },
+        // },
+        sectorSpacing: 3,
       },
     ],
     background: {

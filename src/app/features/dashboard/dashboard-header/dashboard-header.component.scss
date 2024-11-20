@@ -74,3 +74,12 @@
 
   }
 }
+
+
+@media screen and (max-width: 768px) {
+  .active-integrations {
+    flex-wrap: wrap;
+    align-items: center;
+    span{padding: 10px 0;}
+  }
+}
