@@ -101,6 +101,16 @@ a{
   width: 2rem !important;
 }
 
+//chart tooltip
+.ag-chart-tooltip-content{
+  border-radius: 7px !important;
+  padding: 3px 7px !important;
+  font-size: 11px !important;
+}
+.my-tooltip::after, .my-tooltip::before{
+    display: none !important;
+}
+
 
 @media screen and (max-width: 768px) {
   .dashboard-container {

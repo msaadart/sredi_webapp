@@ -15,13 +15,7 @@ export class DashboardServiceService {
       { title: 'Timesheets Expected', value: 500, change: 20 },
       { title: 'Timesheets Created', value: 200, change: -10 },
       { title: 'Timesheets Accepted', value: 200, change: 20 },
-      {
-        title: 'Missing Timesheets',
-        value: 300,
-        change: -10,
-        action: 'remind',
-        actionLabel: 'Remind All',
-      },
+      { title: 'Missing Timesheets', value: 300, change: -10, action: 'remind', actionLabel: 'Remind All'},
     ];
     return of(mockData);
   }
@@ -34,6 +28,7 @@ export class DashboardServiceService {
     { field: 'Confirmed Timesheet' },
     { field: 'Missing Timesheets' },
   ];
+
   getEmployeeSummary(): Observable<Array<any>> {
     const mockData = [
       {

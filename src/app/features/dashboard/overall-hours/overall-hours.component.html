@@ -1,8 +1,18 @@
 <div class="chart-wrapper">
   <div class="card">
-    <ag-charts [options]="options" class="donut"></ag-charts>
+    <app-donut-chart
+      [data]="chartData"
+      [theme]="customTheme"
+      [series]="dountSeries"
+    ></app-donut-chart>
   </div>
   <div class="card2 card">
-    <ag-charts [options]="options2" class="bar" style=" width:100% !important;"></ag-charts>
+    <app-bar-chart
+    [data]="barChart"
+    [series]="series"
+    [theme]="customTheme"></app-bar-chart>
   </div>
 </div>
+
+
+

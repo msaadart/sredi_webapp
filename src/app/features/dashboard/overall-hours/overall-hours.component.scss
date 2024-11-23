@@ -15,12 +15,22 @@
   .card2{
     margin-left: 15px;
     width: 70%;
-    display: flex;
+    display: block;
 
   }
 
 }
 bar{
   width:100% !important;
+}
+
+@media screen and (max-width: 768px) {
+  .chart-wrapper{
+    display: flex;
+    padding:0;
+    flex-wrap: wrap;
+    .card{width: 100%; margin-bottom: 15px; padding: 0; overflow: hidden;}
+    .card2{margin-left: 0;  }
+  }
 }
 

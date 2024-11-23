@@ -18,11 +18,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MaterialInputComponent } from './material-input/material-input.component';
 
+
 import { ButtonComponent } from './button/button.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { CardComponent } from './card/card.component';
-import { ChartComponent } from './chart/chart.component';
 import { TableComponent } from './table/table.component';
+import { AgCharts } from 'ag-charts-angular';
+import { DonutChartComponent } from './chart/donut-chart.component';
+import { BarChartComponent } from './chart/bar-chart.component';
+
 
 
 
@@ -32,8 +36,9 @@ import { TableComponent } from './table/table.component';
     ButtonComponent,
     DatePickerComponent,
     CardComponent,
-    ChartComponent,
     TableComponent,
+    DonutChartComponent,
+    BarChartComponent,
   ],
   imports: [
     CommonModule,
@@ -53,7 +58,8 @@ import { TableComponent } from './table/table.component';
     MatBadgeModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    AgCharts
   ],
   exports:[
     MatSidenavModule,
@@ -74,7 +80,8 @@ import { TableComponent } from './table/table.component';
     ButtonComponent,
     DatePickerComponent,
     CardComponent,
-    ChartComponent
+    DonutChartComponent,
+    BarChartComponent
   ]
 })
 export class SharedModule { }

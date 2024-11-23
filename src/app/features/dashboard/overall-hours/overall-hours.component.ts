@@ -1,117 +1,126 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { AgChartTheme } from 'ag-charts-community';
-
-var myTheme: AgChartTheme = {
-  palette: {
-    fills: ['#03BCF3', '#091836'],
-    strokes: ['black'],
-  },
-
-};
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-overall-hours',
   templateUrl: './overall-hours.component.html',
   styleUrl: './overall-hours.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OverallHoursComponent {
-  list= [
-    { name: "Total Tracked Hours", hours:0.3300, month: 3 },
-    { name: "Total Worked Hours", hours: 0.6695, month: 3 },
+
+  customTheme = {
+    palette: {
+      fills: ['#091836', '#03BCF3'],
+      strokes: ['black'],
+    },
+  };
+
+  // dount charts
+  chartData: chartDount[] = [
+    {
+      name: 'Total Tracked Hours',
+      hours: 400,
+      percentage: '40%',
+      name_hours: 'Total Tracked Hours 400hrs',
+    },
+    {
+      name: 'Total Worked Hours',
+      hours: 600,
+      percentage: '60%',
+      name_hours: 'Total Tracked Hours 600hrs',
+    },
   ];
-  total = this.list.reduce((sum, d) => sum + d["hours"], 0);
-  numFormatter = new Intl.NumberFormat("en-US", {
-    style: "percent",
-    maximumFractionDigits: 0,
-  });
-  public options: any = {
-    theme: myTheme,
-    data:this.list,
 
-    series: [
-      {
-        type: "donut",
-        //calloutLabelKey: "type",
-        angleKey: "hours",
-        sectorLabelKey: "hours",
-        calloutLabel: {
-          enabled: false,
+  dountSeries:unknown = [
+    {
+      type: 'donut',
+      labelKey: 'name',
+      angleKey: 'hours',
+      sectorLabelKey: 'percentage',
+      innerRadiusRatio: 0.6,
+      itemStyler: {
+        cornerRadius: 20,
+      },
+      calloutLabel: {
+        enabled: false,
+      },
+      legendItemKey: 'name_hours',
+      innerLabels: [
+        {
+          text: 'Total Hours',
+          fontSize: 15,
+          spacing: 10,
         },
-        legendItemKey: "name",
-        // sectorLabel: {
-        //   formatter: ({ data, sectorLabelKey }) => {
-        //     return this.numFormatter.format(datum[sectorLabelKey]);
-        //   },
-        // },
-        // title: {
-        //   text: "Annual Count",
-        // },
-        calloutLabelKey: "type",
-        innerRadiusRatio: 0.7,
-        innerLabels: [
-          {
-            text: this.numFormatter.format(this.total),
-            fontSize: 24,
-          },
-          {
-            text: "Total",
-            fontSize: 16,
-            spacing: 10,
-          },
-        ],
-        // tooltip: {
-        //   renderer: ({ datum, calloutLabelKey, title, sectorLabelKey }) => {
-        //     return {
-        //       title,
-        //       content: `${datum[calloutLabelKey]}: ${numFormatter.format(datum[sectorLabelKey])}`,
-        //     };
-        //   },
-        // },
-        sectorSpacing: 3,
+        {
+          text: '1000',
+          fontSize: 24,
+        },
+      ],
+      tooltip: {
+        enabled: false,
       },
-    ],
-    background: {
-      fill: '#FBFBFB',
     },
-  };
+  ]
 
-  public options2: any = {
-    theme: myTheme,
-    autoSize:true,
-    data: [
-      { month: 'January', worked: 120, tracked: 100 },
-      { month: 'January', worked: 110, tracked: 95 },
-      { month: 'March', worked: 130, tracked: 110},
-      { month: 'April', worked: 100, tracked: 90 },
-      { month: 'May', worked: 115, tracked: 100 },
+  // bar charts
+  barChart: barChart[] = [
+    { month: 'Jan', cumulative: 500, total: 50 },
+    { month: 'Feb', cumulative: 500, total: 200 },
+    { month: 'Mar', cumulative: 1000, total: 70 },
+    { month: 'Apr', cumulative: 700, total: 250 },
+    { month: 'May', cumulative: 500, total: 170 },
+    { month: 'Jun', cumulative: 100, total: 30 },
+    { month: 'Jul', cumulative: 100, total: 50 },
+    { month: 'Aug', cumulative: 500, total: 40 },
+    { month: 'Sep', cumulative: 100, total: 400 },
+  ];
 
-    ],
-
-    series: [
-      { type: 'bar', xKey: 'month', yKey: 'worked', yName: 'Cumulative Hours' },
-      { type: 'bar', xKey: 'month', yKey: 'worked', yName: 'Total Hours' },
-    ],
-    axes: [
-      {
-        type: 'category',
-        position: 'bottom',
-        title: { text: 'Month' },
+  series: unknown = [
+    {
+      type: 'bar',
+      xKey: 'month',
+      yKey: 'cumulative',
+      yName: 'Cumulative Hours',
+      fill: '#00bfff',
+      stroke: '#0099cc',
+      tooltip: {
+        renderer: function ({ datum, yKey }: any) {
+          return `
+        <div class="ag-chart-tooltip-content">
+            Cumulative Hours: <b>${datum[yKey]} hrs</b> <br/> Total Hours: <b>${datum.total} hrs</b>
+        </div>`;
+        },
       },
-      {
-        type: 'number',
-        position: 'left',
-        title: { text: 'Hours' },
+      cornerRadius: 4,
+    },
+    {
+      type: 'bar',
+      xKey: 'month',
+      yKey: 'total',
+      yName: 'Total Hours',
+      fill: '#000033',
+      stroke: '#000022',
+      tooltip: {
+        renderer: function ({ datum, yKey }: any) {
+          return `
+        <div class="ag-chart-tooltip-content">
+            Cumulative Hours: <b>${datum.cumulative} hrs</b> <br/> Total Hours: <b>${datum[yKey]} hrs</b>
+        </div>`;
+        },
       },
-    ],
-    title: {
-      text: 'Monthly Hours Summary',
+      cornerRadius: 4,
     },
-    legend: {
-      position: 'bottom',
-    },
-    background: {
-      fill: '#FBFBFB',
-    },
-  };
+  ];
 }
+
+export type barChart = {
+  month: string;
+  cumulative: number;
+  total: number;
+};
+
+export type chartDount = {
+  name: string;
+  hours: number;
+  percentage: string;
+  name_hours: string;
+};
