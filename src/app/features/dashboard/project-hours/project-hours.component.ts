@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { chartsAdditionalData, columnChart } from '../dashboard-service.type';
 
 @Component({
   selector: 'app-project-hours',
@@ -9,7 +10,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 export class ProjectHoursComponent {
   customTheme = {
     palette: {
-      fills: ['#091836', '#03BCF3'],
+      fills: [
+        '#00bfff','#ff8000',
+      ],
       strokes: ['black'],
     },
   };
@@ -34,26 +37,29 @@ export class ProjectHoursComponent {
       xKey: 'name',
       yKey: 'hours',
       yName: 'Total Hours',
-      fill: (params: any) => params.datum.color,
-      stroke: '#0099cc',
+      itemStyler: ({ datum }:any) => {
+        return {
+          fill: datum.color,
+        };
+      },
+      stroke: '#000000',
       tooltip: {
-        renderer: function ({ datum, yKey }: any) {
+        renderer: function ({ datum }: any) {
           return `
         <div class="ag-chart-tooltip-content">
-            Total Hours: <b>${datum.hours}</b>
+            Total Hours: <b>${datum.hours} hrs</b>
         </div>`;
         },
-      },
-      legend: {
-        enabled: false,
       },
       cornerRadius: 4,
     },
   ];
+  chartsAdditional:chartsAdditionalData = {
+    shape: 'circle',
+    axes_position:'left',
+    label_add_word: ' hrs',
+    bg_fill:'#FBFBFB',
+  }
 }
 
-export type columnChart = {
-  name: string;
-  hours: number;
-  color: string;
-};
+

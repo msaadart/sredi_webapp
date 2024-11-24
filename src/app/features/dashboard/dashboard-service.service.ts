@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+import {
+  employeeSummaryTableHeader,
+  EmployeeSummary,
+  timesheetSummary,
+} from './dashboard-service.type';
 
 @Injectable({
   providedIn: 'root',
@@ -7,64 +12,75 @@ import { Observable, of } from 'rxjs';
 export class DashboardServiceService {
   constructor() {}
 
-  agThemeQuartz: string = 'ag-theme-quartz';
-
   // Timesheet summary
-  getSummaryData(): Observable<Array<any>> {
-    const mockData = [
+  getSummaryData(): Observable<Array<timesheetSummary>> {
+    const mockData: timesheetSummary[] = [
       { title: 'Timesheets Expected', value: 500, change: 20 },
       { title: 'Timesheets Created', value: 200, change: -10 },
       { title: 'Timesheets Accepted', value: 200, change: 20 },
-      { title: 'Missing Timesheets', value: 300, change: -10, action: 'remind', actionLabel: 'Remind All'},
+      {
+        title: 'Missing Timesheets',
+        value: 300,
+        change: -10,
+        action: 'remind',
+        actionLabel: 'Remind All',
+      },
     ];
     return of(mockData);
   }
 
   //employee summary
-  employeeSummaryTableHeader: Array<any> = [
-    { field: 'Name' },
-    { field: 'Timesheet Expected' },
-    { field: 'Unconfirmed Timesheet' },
-    { field: 'Confirmed Timesheet' },
-    { field: 'Missing Timesheets' },
+  employeeSummaryTableHeader: employeeSummaryTableHeader[] = [
+    {
+      field: 'Name',
+    },
+    { field: 'Timesheet_Expected' },
+    { field: 'Unconfirmed_Timesheet' },
+    { field: 'Confirmed_Timesheet' },
+    { field: 'Missing_Timesheets' },
   ];
 
-  getEmployeeSummary(): Observable<Array<any>> {
-    const mockData = [
+  getEmployeeSummary(): Observable<Array<EmployeeSummary>> {
+    const mockData: EmployeeSummary[] = [
       {
         Name: 'Theresa Webb',
-        'Timesheet Expected': 54,
-        'Unconfirmed Timesheet': 21,
-        'Confirmed Timesheet': 22,
-        'Missing Timesheets': 11,
+        profilePhoto: 'https://randomuser.me/api/portraits/women/1.jpg',
+        Timesheet_Expected: 54,
+        Unconfirmed_Timesheet: 21,
+        Confirmed_Timesheet: 22,
+        Missing_Timesheets: 11,
       },
       {
         Name: 'Darrell Steward',
-        'Timesheet Expected': 57,
-        'Unconfirmed Timesheet': 12,
-        'Confirmed Timesheet': 33,
-        'Missing Timesheets': 12,
+        profilePhoto: 'https://randomuser.me/api/portraits/men/2.jpg',
+        Timesheet_Expected: 57,
+        Unconfirmed_Timesheet: 12,
+        Confirmed_Timesheet: 33,
+        Missing_Timesheets: 12,
       },
       {
         Name: 'Marvin McKinney',
-        'Timesheet Expected': 99,
-        'Unconfirmed Timesheet': 34,
-        'Confirmed Timesheet': 44,
-        'Missing Timesheets': 21,
+        profilePhoto: 'https://randomuser.me/api/portraits/men/3.jpg',
+        Timesheet_Expected: 99,
+        Unconfirmed_Timesheet: 34,
+        Confirmed_Timesheet: 44,
+        Missing_Timesheets: 21,
       },
       {
         Name: 'Brooklyn Simmons',
-        'Timesheet Expected': 130,
-        'Unconfirmed Timesheet': 44,
-        'Confirmed Timesheet': 55,
-        'Missing Timesheets': 31,
+        profilePhoto: 'https://randomuser.me/api/portraits/women/3.jpg',
+        Timesheet_Expected: 130,
+        Unconfirmed_Timesheet: 44,
+        Confirmed_Timesheet: 55,
+        Missing_Timesheets: 31,
       },
       {
         Name: 'Wade Warren',
-        'Timesheet Expected': 128,
-        'Unconfirmed Timesheet': 21,
-        'Confirmed Timesheet': 66,
-        'Missing Timesheets': 41,
+        profilePhoto: 'https://randomuser.me/api/portraits/men/4.jpg',
+        Timesheet_Expected: 128,
+        Unconfirmed_Timesheet: 21,
+        Confirmed_Timesheet: 66,
+        Missing_Timesheets: 41,
       },
     ];
     return of(mockData);

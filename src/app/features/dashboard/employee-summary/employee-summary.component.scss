@@ -4,15 +4,29 @@
   .button-filter-export{
     display:inline-flex;
   }
-}
-.table-custom {
-  display: flex;
-  flex-direction: column;
-  height: 250px !important;
-}
-
-#myGrid {
-  flex: 1 1 0px;
-  width: 100%;
+  .table-search{width: 60%; height: 50px;}
+  .custom-btn-black{
+    margin-left: 10px;
+  }
 }
 
+
+
+@media screen and (max-width: 768px) {
+  .table-header {
+    display: flex;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  .table-search{width: 100% !important;     }
+  .button-filter-export{
+    width: 100%;
+    display: flex;
+    padding-bottom: 10px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .custom-btn-black{
+    margin-left: 0 !important;
+  }
+}

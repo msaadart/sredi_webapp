@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { barChart, chartDount, chartsAdditionalData } from '../dashboard-service.type';
 
 @Component({
   selector: 'app-overall-hours',
@@ -110,17 +111,10 @@ export class OverallHoursComponent {
       cornerRadius: 4,
     },
   ];
+  chartsAdditional:chartsAdditionalData = {
+    shape:'circle',
+    axes_position:'left',
+    label_add_word: ' hrs',
+    bg_fill:'#FBFBFB',
+  }
 }
-
-export type barChart = {
-  month: string;
-  cumulative: number;
-  total: number;
-};
-
-export type chartDount = {
-  name: string;
-  hours: number;
-  percentage: string;
-  name_hours: string;
-};

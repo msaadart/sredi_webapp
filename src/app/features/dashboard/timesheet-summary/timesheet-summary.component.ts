@@ -1,3 +1,4 @@
+import { timesheetSummary } from '../dashboard-service.type';
 import { DashboardServiceService } from './../dashboard-service.service';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
@@ -10,7 +11,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 
 export class TimesheetSummaryComponent implements OnInit {
 
-  summaryData: Array<any> = [];
+  summaryData: timesheetSummary[] = [];
 
   constructor(private DashboardServiceService: DashboardServiceService) {}
 

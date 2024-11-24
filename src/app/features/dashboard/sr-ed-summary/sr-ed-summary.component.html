@@ -1,1 +1,16 @@
-<p>sr-ed-summary works!</p>
+<div class="content">
+  <div class="table-header">
+    <div class="table-search">
+      <app-material-input label="Search" placeholder="Search here" [control]="searchControl"
+        icon="search"></app-material-input>
+    </div>
+    <div class="button-filter-export">
+      <app-button icon="filter_list" class="custom-btn-black">Filter</app-button>
+      <app-button icon="cloud_download" class="custom-btn-black">Export</app-button>
+    </div>
+  </div>
+
+  <app-table style="width: 100%;" class="ag-theme-alpine" [rowData]="rowData" [columnDefs]="columnDefs"
+    [enablePagination]="false">
+  </app-table>
+</div>

@@ -17,13 +17,16 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MaterialInputComponent } from './material-input/material-input.component';
+import {MatDividerModule} from '@angular/material/divider';
+
+import { AgCharts } from 'ag-charts-angular';
+import { AgGridAngular } from "ag-grid-angular";
 
 
 import { ButtonComponent } from './button/button.component';
 import { DatePickerComponent } from './date-picker/date-picker.component';
 import { CardComponent } from './card/card.component';
 import { TableComponent } from './table/table.component';
-import { AgCharts } from 'ag-charts-angular';
 import { DonutChartComponent } from './chart/donut-chart.component';
 import { BarChartComponent } from './chart/bar-chart.component';
 
@@ -59,7 +62,9 @@ import { BarChartComponent } from './chart/bar-chart.component';
     ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
-    AgCharts
+    MatDividerModule,
+    AgCharts,
+    AgGridAngular
   ],
   exports:[
     MatSidenavModule,
@@ -77,9 +82,11 @@ import { BarChartComponent } from './chart/bar-chart.component';
     MatNativeDateModule,
     MatBadgeModule,
     MaterialInputComponent,
+    MatDividerModule,
     ButtonComponent,
     DatePickerComponent,
     CardComponent,
+    TableComponent,
     DonutChartComponent,
     BarChartComponent
   ]

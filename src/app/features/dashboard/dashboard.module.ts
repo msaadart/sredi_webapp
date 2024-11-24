@@ -10,7 +10,7 @@ import { TimesheetSummaryComponent } from './timesheet-summary/timesheet-summary
 import { ProjectHoursComponent } from './project-hours/project-hours.component';
 import { EmployeeSummaryComponent } from './employee-summary/employee-summary.component';
 import { SrEdSummaryComponent } from './sr-ed-summary/sr-ed-summary.component';
-import { AgGridAngular } from "ag-grid-angular";
+
 
 
 @NgModule({
@@ -26,8 +26,7 @@ import { AgGridAngular } from "ag-grid-angular";
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    SharedModule,
-    AgGridAngular
+    SharedModule
   ]
 })
 export class DashboardModule { }

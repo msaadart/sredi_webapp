@@ -1,56 +1,56 @@
-
 @use '@angular/material' as mat;
-
 @include mat.core();
-$dashboard-theme: mat.define-theme((
-  color: (
-    theme-type: light,
-    primary: mat.$azure-palette,
-    tertiary: mat.$blue-palette,
-  ),
-  density: (
-    scale: 0,
-  )
-));
 
+$dashboard-theme: mat.define-theme((color: (theme-type: light,
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      density: (scale: 0,
+      )));
 
 :root {
   @include mat.all-component-themes($dashboard-theme);
 }
 
+@import 'ag-grid-community/styles/ag-grid.css';
+@import 'ag-grid-community/styles/ag-theme-alpine.css';
 
 :root {
   --primary-color: #03BCF3;
-  --lightblue-color:#F6FBFF;
-  --cerulean-blue-200:#C9F3FF;
-  --cerulean-blue-100:#D9EDFF;
-  --Neutral-900:#2A2A2A;
-  --Neutral-800:#454545;
-  --Neutral-700:#4F4F4F;
+  --lightblue-color: #F6FBFF;
+  --cerulean-blue-200: #C9F3FF;
+  --cerulean-blue-100: #D9EDFF;
+  --Neutral-900: #2A2A2A;
+  --Neutral-800: #454545;
+  --Neutral-700: #4F4F4F;
   --Neutral-600: #5D5D5D;
   --Neutral-500: #737373;
   --Neutral-200: #D1D1D1;
   --Neutral-100: #E7E7E7;
   --Neutral-50: #F6F6F6;
   --Medium-Grey: #949494;
-  --charcoal-black:#292929;
+  --charcoal-black: #292929;
   --secondary-color: #6C757D;
   --accent-color: #17A2B8;
   --green-800: #53AF57;
-  --green-100:#E9F8EE;
-  --red-900:#B14040;
+  --green-100: #E9F8EE;
+  --red-900: #B14040;
   --red-800: #EA3030;
-  --red-100:#F8E9E9;
+  --red-100: #F8E9E9;
   --white-background-200: #E3E3E3;
-  --white-background-100:#FBFBFB;
+  --white-background-100: #FBFBFB;
   --white-background: #FFFFFF;
-  --font-family:  "Plus Jakarta Sans", sans-serif;
+  --font-family: "Plus Jakarta Sans", sans-serif;
   --font-size: .9rem;
   --font-size-large: 1.5rem;
   --font-size-small: .7rem;
 }
 
-html, body { height: 100%; }
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-color: var(--background-color);
   font-family: var(--font-family);
@@ -63,53 +63,82 @@ body {
 .mat-mdc-slide-toggle.mat-mdc-slide-toggle-checked:not(.mat-disabled) .mdc-switch__shadow {
   background-color: var(--white-background);
 }
+
 .mat-mdc-slide-toggle.mat-mdc-slide-toggle-checked:not(.mat-disabled) .mdc-switch__track::after {
-  background-color: var( --primary-color) !important;
+  background-color: var(--primary-color) !important;
 }
-.mdc-switch__handle::before, .mdc-switch__handle::after{
+
+.mdc-switch__handle::before,
+.mdc-switch__handle::after {
   background: var(--white-background) !important;
 }
-.mdc-switch__track::before, .mdc-switch__track::after{
-  border-color:var(--white-background) !important;
+
+.mdc-switch__track::before,
+.mdc-switch__track::after {
+  border-color: var(--white-background) !important;
 }
 
 // mat-field
 .mat-mdc-notch-piece {
   border-color: var(--Neutral-200) !important;
 }
-.mdc-floating-label{
+
+.mdc-floating-label {
   color: var(--Medium-Grey) !important;
 }
+
 .mdc-text-field--outlined {
   --mdc-outlined-text-field-container-shape: 8px !important;
+}
+
+.mat-mdc-form-field {
+  width: 100% !important;
 }
 
 
 
 //badge
-.mat-badge-content{
+.mat-badge-content {
   background-color: var(--red-800) !important;
   color: var(--white-background) !important;
   border-radius: 2px !important;
 }
 
-a{
+a {
   cursor: pointer;
 }
 
-.mat-mdc-button>.mat-icon{
+.mat-mdc-button>.mat-icon {
   width: 2rem !important;
 }
 
 //chart tooltip
-.ag-chart-tooltip-content{
+.ag-chart-tooltip-content {
   border-radius: 7px !important;
   padding: 3px 7px !important;
   font-size: 11px !important;
 }
-.my-tooltip::after, .my-tooltip::before{
-    display: none !important;
+
+.my-tooltip:after,
+.my-tooltip:before {
+  display: none !important;
 }
+
+// table profile
+.profile-img {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+
+}
+
 
 
 @media screen and (max-width: 768px) {
@@ -117,7 +146,8 @@ a{
     flex-direction: column;
     padding: 10px;
   }
-  :root{
+
+  :root {
     --font-size: .8rem !important;
     --font-size-large: 1rem !important;
     --font-size-small: .6rem !important;

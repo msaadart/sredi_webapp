@@ -9,7 +9,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
           <div class="header">
             <h3>{{ title }}</h3>
             <div class="button-icon">
-              <app-button *ngIf="view">{{view}}</app-button>
+              <button *ngIf="view" class="view-button">{{view}}</button>
               <button (click)="onClick()">
                 <mat-icon>{{ icon }}</mat-icon>
               </button>
@@ -53,10 +53,19 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
               .button-icon{
                 display:inline-flex;
               }
+              .view-button{
+                background: none;
+                border: none;
+                font-weight: bold;
+                color: var(--Neutral-900);
+                cursor: pointer;
+                text-decoration: underline;
+              }
             }
           }
         }
       }
+
     `,
   ],
 })
