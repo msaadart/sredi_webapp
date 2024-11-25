@@ -51,3 +51,22 @@ export type columnChart = {
   hours: number;
   color: string;
 };
+
+// SR & ED summary
+export type REDSummaryTableHeader = {
+  field: string;
+  cellRenderer?:unknown;
+};
+
+export type REDSummary = {
+  Name: string,
+  profilePhoto: string,
+  Tracking_Score: string,
+  Expected_Hours: number,
+  Worked_Hours: number,
+  Tracked_Hours: number,
+  New:number,
+  Fiber:number,
+  FD_Test:number,
+  SRED_Hours:number
+};

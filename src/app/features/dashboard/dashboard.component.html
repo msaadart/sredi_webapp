@@ -8,9 +8,9 @@
 <app-card title="Project Hours" icon="more_vert">
   <app-project-hours></app-project-hours>
 </app-card>
-<app-card title="Employee's Summary" icon="more_vert" view="View All">
+<app-card title="Employee's Summary" icon="more_vert" view="View All" *ngIf="screenSize != 'sm'">
 <app-employee-summary></app-employee-summary>
 </app-card>
-<app-card title="SR & ED Summary" icon="more_vert" view="View All">
+<app-card title="SR & ED Summary" icon="more_vert" view="View All" *ngIf="screenSize != 'sm'">
   <app-sr-ed-summary></app-sr-ed-summary>
 </app-card>

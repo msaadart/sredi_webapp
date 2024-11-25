@@ -23,6 +23,31 @@
 bar{
   width:100% !important;
 }
+.donut-per{
+  position: absolute;
+    transform: translate(-50%, -50%);
+    background-color:var(--Neutral-100);
+    padding: 10px 5px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--charcoal-black);
+    border-radius: 52%;
+    margin: 89px 0 0 -104px;
+}
+.donut-per2{
+  position: absolute;
+    transform: translate(-50%, -50%);
+    background-color:var(--Neutral-100);
+    padding: 10px 5px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--charcoal-black);
+    border-radius: 52%;
+    margin: -147px 0 0 186px ;
+
+}
 
 @media screen and (max-width: 768px) {
   .chart-wrapper{

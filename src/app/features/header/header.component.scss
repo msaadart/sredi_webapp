@@ -83,8 +83,9 @@
     top: 64px;
     z-index: 9;
     border-left: 0 !important;
-    padding: 20px 5px !important;
+    padding: 20px 5px 20px 7px !important;
     background-color: var(--white-background);
+    margin-right: -4px;
   }
 
   ::ng-deep .mat-mdc-form-field {
@@ -103,8 +104,10 @@
     z-index: 9;
     border-left: 0 !important;
     padding: 10px 5px !important;
+    padding: 10px 6px !important;
     background-color: var(--white-background);
     display: none;
+    margin-left: -5px;
   }
 
   .show {

@@ -1,7 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { FormControl} from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { DashboardServiceService } from '../dashboard-service.service';
-import { employeeSummaryTableHeader, EmployeeSummary } from '../dashboard-service.type';
+import {
+  employeeSummaryTableHeader,
+  EmployeeSummary,
+  REDSummary,
+  REDSummaryTableHeader,
+} from '../dashboard-service.type';
 
 @Component({
   selector: 'app-sr-ed-summary',
@@ -10,15 +15,33 @@ import { employeeSummaryTableHeader, EmployeeSummary } from '../dashboard-servic
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SrEdSummaryComponent {
-  public rowData:EmployeeSummary[] = [];
-  public columnDefs:employeeSummaryTableHeader[];
+  public rowData: REDSummary[] = [];
+  public columnDefs: REDSummaryTableHeader[] = [
+    {
+      field: 'Name',
+      cellRenderer: (params: any) => {
+        return `
+        <div class="profile-img">
+         <img src="${params.data.profilePhoto}" alt="Profile" class='profile-img' />
+          <b>${params.data.Name}</b>
+        </div>
+        `;
+      },
+    },
+    { field: 'Tracking_Score' },
+    { field: 'Expected_Hours' },
+    { field: 'Worked_Hours' },
+    { field: 'Tracked_Hours' },
+    { field: 'New' },
+    { field: 'Fiber' },
+    { field: 'FD_Test' },
+    { field: 'SRED_Hours' },
+  ];
 
-  constructor(private DashboardServiceService: DashboardServiceService) {
-    this.columnDefs = this.DashboardServiceService.employeeSummaryTableHeader;
-  }
+  constructor(private DashboardServiceService: DashboardServiceService) {}
 
   ngOnInit(): void {
-    this.DashboardServiceService.getEmployeeSummary().subscribe((data) => {
+    this.DashboardServiceService.getSREDSummary().subscribe((data) => {
       this.rowData = data;
     });
   }

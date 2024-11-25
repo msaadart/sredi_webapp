@@ -21,14 +21,20 @@ export class EmployeeSummaryComponent implements OnInit {
          <img src="${params.data.profilePhoto}" alt="Profile" class='profile-img' />
           <b>${params.data.Name}</b>
         </div>
-
         `;
       },
     },
     { field: 'Timesheet_Expected' },
     { field: 'Unconfirmed_Timesheet' },
     { field: 'Confirmed_Timesheet' },
-    { field: 'Missing_Timesheets' },
+    { field: 'Missing_Timesheets',
+      cellRenderer: (params: any) => {
+        return `
+        ${params.data.Missing_Timesheets}
+          <b><u>Notify User</u></b>
+        `;
+     },
+    }
   ];
 
   constructor(private DashboardServiceService: DashboardServiceService) {
