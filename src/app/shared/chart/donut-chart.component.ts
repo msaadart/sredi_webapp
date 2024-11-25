@@ -36,7 +36,7 @@ export class DonutChartComponent implements OnInit {
         item:{
           marker: {
             shape: "circle",
-          }
+          },
         }
       },
       background: {
