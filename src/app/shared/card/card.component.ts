@@ -7,7 +7,11 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
       <mat-card>
         <mat-card-header>
           <div class="header">
-            <h3>{{ title }}</h3>
+            <h3>
+              @if(titleIcon){
+                <mat-icon>{{titleIcon}}</mat-icon>  
+              } 
+              {{ title }}</h3>
             <div class="button-icon">
               <button *ngIf="view" class="view-button">{{view}}</button>
               <button (click)="onClick()">
@@ -73,6 +77,7 @@ export class CardComponent {
   @Input() title: string = '';
   @Input() icon: string | null = null;
   @Input() view: string | null = null;
+  @Input() titleIcon: string | null = null;
 
   @Output() clicked: EventEmitter<void> = new EventEmitter<void>();
 

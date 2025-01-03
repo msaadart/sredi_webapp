@@ -1,0 +1,9 @@
+{
+    "quater_Payment": [
+    { "amount":"0", "start_Date":"1-1-2024", "end_Date":"31-3-2024", "quarter":"Q1" },
+    { "amount":"8901", "start_Date":"1-4-2024", "end_Date":"31-6-2024", "quarter":"Q2" },
+    { "amount":"9410", "start_Date":"1-7-2024", "end_Date":"31-9-2024", "quarter":"Q3" },
+    { "amount":"5129", "start_Date":"1-10-2024", "end_Date":"31-12-2024", "quarter":"Q4" },
+    { "amount":"23439", "start_Date":"1-1-2024", "end_Date":"31-3-2024", "quarter":"Q5" }
+    ]
+  }

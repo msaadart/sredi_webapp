@@ -18,6 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MaterialInputComponent } from './material-input/material-input.component';
 import {MatDividerModule} from '@angular/material/divider';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatSelectModule} from '@angular/material/select';
 
 import { AgCharts } from 'ag-charts-angular';
 import { AgGridAngular } from "ag-grid-angular";
@@ -63,6 +65,8 @@ import { BarChartComponent } from './chart/bar-chart.component';
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
+    MatTabsModule,
+    MatSelectModule,
     AgCharts,
     AgGridAngular
   ],
@@ -87,6 +91,8 @@ import { BarChartComponent } from './chart/bar-chart.component';
     DatePickerComponent,
     CardComponent,
     TableComponent,
+    MatTabsModule,
+    MatSelectModule,
     DonutChartComponent,
     BarChartComponent
   ]

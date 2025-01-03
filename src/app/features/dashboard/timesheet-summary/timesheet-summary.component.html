@@ -9,8 +9,8 @@
       </div>
       <div class="card-content">
         <h2>{{ item.value }}</h2>
-        <div class="percentage-change" [ngClass]="item.change > 0 ? 'positive' : 'negative'">
-          <mat-icon>{{ item.change > 0 ? 'arrow_upward' : 'arrow_downward' }}</mat-icon>
+        <div class="percentage-change" [ngClass]="item.change > 10 ? 'positive' : 'negative'">
+          <mat-icon>{{ item.change > 10 ? 'arrow_upward' : 'arrow_downward' }}</mat-icon>
           {{ item.change }}%
         </div>
       </div>
