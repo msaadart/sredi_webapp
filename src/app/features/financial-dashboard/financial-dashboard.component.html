@@ -1,4 +1,4 @@
-<app-card title="SR & ED Projections" view="Recalculate Projections">
+<app-card title="SR & ED Projections" flatButton="Recalculate Projections">
     <div class="update">
     <div class="Confidential-financials">
         <mat-form-field>
@@ -8,14 +8,35 @@
             </mat-select>
         </mat-form-field>
     </div>
-      <div> <b>Last Update At:</b> 2024-12-07 <br />
-        <b>Last Update Status:</b> Completed </div>
+    <div>
+        <mat-button-toggle-group
+            name="favoriteColor"
+            aria-label="Favorite Color"
+            (change)="selectiveData(group.value)" #group="matButtonToggleGroup" [value]="selectedDefualtValue">
+            <mat-button-toggle value="show_hours">Show Hours</mat-button-toggle>
+            <mat-button-toggle value="show_expenditures">Show Expenditures</mat-button-toggle>
+            <mat-button-toggle value="show_credits">Show Credits</mat-button-toggle>
+        </mat-button-toggle-group>
+    </div>
+    <div> 
+        <b>Last Update At:</b> 2024-12-07 <br />
+        <b>Last Update Status:</b> Completed 
+    </div>
     </div>
     
     <app-sred-projections></app-sred-projections>
 </app-card>
 
 
-<app-card titleIcon="dvr" title="Total Staff Included in Claim" icon="more_vert">
-    <app-total-staff></app-total-staff>
+<app-card titleIcon="dvr" title="Total Staff Included in Claim (7)">
+    <app-total-staff [subHeading]="'Staff not Assigned to Team'"></app-total-staff>
+    <app-total-staff [subHeading]="'Mobile Team'"></app-total-staff>
+</app-card>
+
+<app-card title="Other Expenses" titleIcon="view_headline">
+    <app-vendor-invoices [subHeading]="'Vendor Invoices'" ></app-vendor-invoices>
+</app-card>
+
+<app-card title="Staff Salary">
+    <app-staff-salary></app-staff-salary>
 </app-card>

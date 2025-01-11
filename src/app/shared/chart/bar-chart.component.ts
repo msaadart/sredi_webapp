@@ -7,10 +7,10 @@ import {
 
 @Component({
   selector: 'app-bar-chart',
-  template: ` <ag-charts [options]="options" class="donut"></ag-charts> `,
+  template: ` <ag-charts [options]="options" class="bar"></ag-charts> `,
   styles: [
     `
-      .donut {
+      .bar{
         width: 100%;
         display: block;
       }
@@ -43,6 +43,7 @@ export class BarChartComponent {
             shape: this.chartsAdditional.shape,
           },
         },
+        position:this.chartsAdditional.legend_position
       },
       tooltip: {
         class: 'my-tooltip',
@@ -51,6 +52,8 @@ export class BarChartComponent {
         {
           type: 'category',
           position: 'bottom',
+          title: this.chartsAdditional.axes_center_title
+          && { text: this.chartsAdditional.axes_center_title }
         } as AgCategoryAxisOptions,
         {
           type: 'number',
@@ -60,6 +63,8 @@ export class BarChartComponent {
               return params.value + this.chartsAdditional.label_add_word;
             },
           },
+          title: this.chartsAdditional.axes_left_title
+          && { text: this.chartsAdditional.axes_left_title }
         } as AgNumberAxisOptions,
       ],
       background: {
@@ -74,6 +79,9 @@ export type chartsAdditionalData = {
   axes_position: string;
   label_add_word: string;
   bg_fill:string;
+  axes_left_title?:string;
+  axes_center_title?:string;
+  legend_position?:string;
 };
 
 type Shape = 'circle' | 'square' | 'cross' | 'plus' | 'triangle';

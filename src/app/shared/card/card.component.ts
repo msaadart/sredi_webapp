@@ -13,8 +13,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
               } 
               {{ title }}</h3>
             <div class="button-icon">
-              <button *ngIf="view" class="view-button">{{view}}</button>
-              <button (click)="onClick()">
+              <button mat-flat-button *ngIf="flatButton">{{flatButton}}</button>
+              <button mat-flat-button *ngIf="view" class="view-button button">{{view}}</button>
+              <button (click)="onClick()" class="button">
                 <mat-icon>{{ icon }}</mat-icon>
               </button>
             </div>
@@ -47,9 +48,13 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
                 font-size:var(font-size);
                 color:var(--Neutral-800);
                 font-weight:normal;
+                display:flex;
+                mat-icon{
+                  padding-right:5px;
+                }
               }
 
-              button {
+              .button {
                 font-size: var(font-size);
                 background-color: var(--white-background);
                 border:0;
@@ -78,6 +83,7 @@ export class CardComponent {
   @Input() icon: string | null = null;
   @Input() view: string | null = null;
   @Input() titleIcon: string | null = null;
+  @Input() flatButton: string | null = null;
 
   @Output() clicked: EventEmitter<void> = new EventEmitter<void>();
 

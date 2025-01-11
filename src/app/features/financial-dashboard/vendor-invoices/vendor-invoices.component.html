@@ -1,0 +1,40 @@
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h2 class="sub-heading">
+                    <mat-icon>business</mat-icon> <span> {{subHeading}}</span>
+                </h2>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="body-panel">
+            <app-table style="width: 100%;" class="ag-theme-quartz" [rowData]="vendorInvoicesrowData"
+                [columnDefs]="vendorInvoiceHeader" [enablePagination]="false">
+            </app-table>
+            <button mat-flat-button class="add-vendor"><mat-icon>note_add</mat-icon> Add Vendor Invoice</button>
+        </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h2 class="sub-heading">
+                    <mat-icon>business</mat-icon> <span> Government Assistance</span>
+                </h2>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="body-panel">
+            <div class="total-amount">
+                <div class="label">Total Amount of Government Assistance</div>
+                <div>
+                    <app-material-input label="Total Amount" type="number"
+                        [control]="total_amount"></app-material-input>
+                </div>
+            </div>
+            <div class="footer-button">
+                <button mat-button>Cancel</button>
+                <button mat-flat-button>Save</button>
+            </div>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

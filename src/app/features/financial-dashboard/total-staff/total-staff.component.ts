@@ -1,12 +1,26 @@
-import { Component } from '@angular/core';
-import { barChart, chartsAdditionalData } from '../financial-dashboard.type';
+import { Component, Input, OnInit } from '@angular/core';
+import { barChartStaff, chartsAdditionalData } from '../financial-dashboard.type';
+import { FinancialServicesService } from '../financial-services.service';
 
 @Component({
   selector: 'app-total-staff',
   templateUrl: './total-staff.component.html',
   styleUrl: './total-staff.component.scss',
 })
-export class TotalStaffComponent {
+export class TotalStaffComponent implements OnInit{
+
+  @Input() subHeading:string = '';
+
+  constructor(
+    private RequestService: FinancialServicesService,
+  ){}
+
+  barChartStaff: barChartStaff[] = [];
+  ngOnInit(): void {
+    this.RequestService.getStaffNotAssignedTeam('staff_not_assigned_team').subscribe((data) => {
+      this.barChartStaff = data;
+    });
+  }
 
   customTheme = {
     palette: {
@@ -15,33 +29,19 @@ export class TotalStaffComponent {
     },
   };
 
-
-  // bar charts
-  barChart: barChart[] = [
-    { month: 'Jan', cumulative: 500, total: 50 },
-    { month: 'Feb', cumulative: 500, total: 200 },
-    { month: 'Mar', cumulative: 1000, total: 70 },
-    { month: 'Apr', cumulative: 700, total: 250 },
-    { month: 'May', cumulative: 500, total: 170 },
-    { month: 'Jun', cumulative: 100, total: 30 },
-    { month: 'Jul', cumulative: 100, total: 50 },
-    { month: 'Aug', cumulative: 500, total: 40 },
-    { month: 'Sep', cumulative: 100, total: 400 },
-  ];
-
   series: unknown = [
     {
       type: 'bar',
       xKey: 'month',
-      yKey: 'cumulative',
-      yName: 'Cumulative Hours',
+      yKey: 'sr_ed',
+      yName: 'SR&ED',
       fill: '#00bfff',
       stroke: '#0099cc',
       tooltip: {
         renderer: function ({ datum, yKey }: any) {
           return `
         <div class="ag-chart-tooltip-content">
-            Cumulative Hours: <b>${datum[yKey]} hrs</b> <br/> Total Hours: <b>${datum.total} hrs</b>
+            SR&ED: <b>${datum[yKey]} hrs</b> <br/> Unclaimed: <b>${datum.unclaimed} hrs</b>
         </div>`;
         },
       },
@@ -50,25 +50,30 @@ export class TotalStaffComponent {
     {
       type: 'bar',
       xKey: 'month',
-      yKey: 'total',
-      yName: 'Total Hours',
+      yKey: 'unclaimed',
+      yName: 'unclaimed',
       fill: '#000033',
       stroke: '#000022',
       tooltip: {
         renderer: function ({ datum, yKey }: any) {
           return `
         <div class="ag-chart-tooltip-content">
-            Cumulative Hours: <b>${datum.cumulative} hrs</b> <br/> Total Hours: <b>${datum[yKey]} hrs</b>
+            SR&ED: <b>${datum.sr_ed} hrs</b> <br/> Unclaimed: <b>${datum[yKey]} hrs</b>
         </div>`;
         },
       },
       cornerRadius: 4,
     },
   ];
+
   chartsAdditional:chartsAdditionalData = {
     shape:'circle',
     axes_position:'left',
-    label_add_word: ' hrs',
+    label_add_word: '',
     bg_fill:'#FBFBFB',
+    axes_left_title: 'SR&ED Hours',
+    axes_center_title: 'SR&ED Employees and Contractors',
+    legend_position:'right'
   } 
+
 }

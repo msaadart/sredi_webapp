@@ -1,9 +1,68 @@
 {
-    "quater_Payment": [
-    { "amount":"0", "start_Date":"1-1-2024", "end_Date":"31-3-2024", "quarter":"Q1" },
-    { "amount":"8901", "start_Date":"1-4-2024", "end_Date":"31-6-2024", "quarter":"Q2" },
-    { "amount":"9410", "start_Date":"1-7-2024", "end_Date":"31-9-2024", "quarter":"Q3" },
-    { "amount":"5129", "start_Date":"1-10-2024", "end_Date":"31-12-2024", "quarter":"Q4" },
-    { "amount":"23439", "start_Date":"1-1-2024", "end_Date":"31-3-2024", "quarter":"Q5" }
+    "quater_Payment": {
+      "show_hours":{
+        "quater":[
+          { "hours":"0", "start_Date":"1-1-2024", "end_Date":"31-3-2024", "quarter":"Q1" },
+          { "hours":"187", "start_Date":"1-4-2024", "end_Date":"31-6-2024", "quarter":"Q2" },
+          { "hours":"200", "start_Date":"1-7-2024", "end_Date":"31-9-2024", "quarter":"Q3" },
+          { "hours":"54", "start_Date":"1-10-2024", "end_Date":"31-12-2024", "quarter":"Q4" },
+          { "hours":"432", "start_Date":"1-1-2024", "end_Date":"31-3-2024", "quarter":"Q5" }
+          ],
+          "current_year":"432",
+          "full_year":"461",
+          "projects":[
+            {"name_status":"Unclaimed Work", "hours":"828", "class_name":"unclaimed"},
+            {"name_status":"Rendering System", "hours":"352", "class_name":"rendering"},
+            {"name_status":"API Performance", "hours":"80", "class_name":"api"}
+          ],
+          "hours_status": true
+      },
+      "show_expenditures":{
+        "quater":[
+          { "amount":"0", "start_Date":"1-1-2024", "end_Date":"31-3-2024", "quarter":"Q1" },
+          { "amount":"8901", "start_Date":"1-4-2024", "end_Date":"31-6-2024", "quarter":"Q2" },
+          { "amount":"9410", "start_Date":"1-7-2024", "end_Date":"31-9-2024", "quarter":"Q3" },
+          { "amount":"5129", "start_Date":"1-10-2024", "end_Date":"31-12-2024", "quarter":"Q4" },
+          { "amount":"23439", "start_Date":"1-1-2024", "end_Date":"31-3-2024", "quarter":"Q5" }
+          ],
+          "current_year":"52593",
+          "full_year":"56129",
+          "projects":[
+            {"name_status":"Unclaimed Work", "amount":"127352","class_name":"unclaimed"},
+            {"name_status":"Rendering System", "amount":"48570","class_name":"rendering"},
+            {"name_status":"API Performance", "amount":"4021","class_name":"api"}
+                ],
+          "hours_status": false
+      },
+      "show_credits":{
+        "quater":[
+          { "amount":"0", "start_Date":"1-1-2024", "end_Date":"31-3-2024", "quarter":"Q1" },
+          { "amount":"8901", "start_Date":"1-4-2024", "end_Date":"31-6-2024", "quarter":"Q2" },
+          { "amount":"9410", "start_Date":"1-7-2024", "end_Date":"31-9-2024", "quarter":"Q3" },
+          { "amount":"5129", "start_Date":"1-10-2024", "end_Date":"31-12-2024", "quarter":"Q4" },
+          { "amount":"23439", "start_Date":"1-1-2024", "end_Date":"31-3-2024", "quarter":"Q5" }
+          ],
+          "current_year":"23439",
+          "full_year":"25016",
+          "projects":[
+            {"name_status":"Unclaimed Work", "amount":"127352", "class_name":"unclaimed"},
+            {"name_status":"API Performance", "amount":"4021", "class_name":"api"}
+                ],
+                "hours_status": false
+      }   
+    },
+    "staff_not_assigned_team":[
+      { "month": "Sophia", "sr_ed": 500, "unclaimed": 50 },
+      { "month": "Anne User", "sr_ed": 500, "unclaimed": 200 },
+      { "month": "Sredio", "sr_ed": 1000, "unclaimed": 70 },
+      { "month": "Michael", "sr_ed": 700, "unclaimed": 250 }
+    ],
+    "vendor_invoices":[
+      
+      {"invoice_submitted":"2024-08-15", "invoice_number":"12345", "mvoice_amount":400, "vendor_name":"test","name_of_provider":"", "project":"test","description":"this is a", "is_SRED":"Yes", "province":"ON","status":"in progress"},
+      {"invoice_submitted":"12-2-2024", "invoice_number":"12345", "mvoice_amount":400, "vendor_name":"test","name_of_provider":"", "project":"test","description":"this is a", "is_SRED":"Yes", "province":"ON","status":"in progress"},
+      {"invoice_submitted":"12-2-2024", "invoice_number":"12345", "mvoice_amount":400, "vendor_name":"test","name_of_provider":"", "project":"test","description":"this is a", "is_SRED":"Yes", "province":"ON","status":"in progress"}
     ]
+
+
   }

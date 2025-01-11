@@ -20,6 +20,9 @@ import { MaterialInputComponent } from './material-input/material-input.componen
 import {MatDividerModule} from '@angular/material/divider';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatSelectModule} from '@angular/material/select';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
 
 import { AgCharts } from 'ag-charts-angular';
 import { AgGridAngular } from "ag-grid-angular";
@@ -49,7 +52,6 @@ import { BarChartComponent } from './chart/bar-chart.component';
     CommonModule,
     MatSidenavModule,
     MatSidenav,
-    MatButtonModule,
     MatIconModule,
     MatListModule,
     MatExpansionModule,
@@ -67,6 +69,9 @@ import { BarChartComponent } from './chart/bar-chart.component';
     MatDividerModule,
     MatTabsModule,
     MatSelectModule,
+    MatButtonToggleModule, 
+    MatCheckboxModule,
+    MatBadgeModule,
     AgCharts,
     AgGridAngular
   ],
@@ -94,7 +99,10 @@ import { BarChartComponent } from './chart/bar-chart.component';
     MatTabsModule,
     MatSelectModule,
     DonutChartComponent,
-    BarChartComponent
+    BarChartComponent,
+    MatButtonToggleModule, 
+    MatCheckboxModule,
+    MatBadgeModule,
   ]
 })
 export class SharedModule { }

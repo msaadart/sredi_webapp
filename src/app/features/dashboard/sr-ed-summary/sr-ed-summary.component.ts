@@ -2,10 +2,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { DashboardServiceService } from '../dashboard-service.service';
 import {
-  employeeSummaryTableHeader,
-  EmployeeSummary,
   REDSummary,
-  REDSummaryTableHeader,
+  TTableHeader,
 } from '../dashboard-service.type';
 
 @Component({
@@ -16,7 +14,7 @@ import {
 })
 export class SrEdSummaryComponent {
   public rowData: REDSummary[] = [];
-  public columnDefs: REDSummaryTableHeader[] = [
+  public columnDefs: TTableHeader[] = [
     {
       field: 'Name',
       cellRenderer: (params: any) => {
@@ -28,7 +26,7 @@ export class SrEdSummaryComponent {
         `;
       },
     },
-    { field: 'Tracking_Score' },
+    { field: 'Tracking Score' },
     { field: 'Expected_Hours' },
     { field: 'Worked_Hours' },
     { field: 'Tracked_Hours' },

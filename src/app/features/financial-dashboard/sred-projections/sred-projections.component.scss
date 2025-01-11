@@ -1,0 +1,84 @@
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--white-background-200);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.tabs div {
+    text-align: center;
+    flex: 1;
+    padding: 5px;
+    font-size: 14px;
+    color: var(--secondary-color);
+}
+
+.tabs .active {
+    color: var(--primary-color);
+    font-weight: bold;
+    background-color: var(--white-background);
+    div{
+        color: var(--primary-color);
+    }
+}
+
+.summary {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+     margin: 20px 0 10px;
+    h3{
+        font-size: var(--font-size-medium); margin-top: 0; margin-bottom: 0;
+    }
+}
+
+.summary .current-year {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: var(--font-size-large);
+}
+
+.summary .full-year {
+    color: var(--secondary-color);
+    font-size: var(--font-size-large);
+}
+
+.projects {
+    margin-top: 10px;
+    padding: 10px;
+    background: var(--white-background);
+    border-radius: 5px;
+}
+
+.projects-title {
+    margin-bottom: 10px;
+    color: var(--charcoal-black);
+}
+
+.project-bar {
+    display: flex;
+    margin-top: 10px;
+}
+
+.project {
+    text-align: center;
+    color: var(--white-background);
+    padding: 10px;
+    font-size: 14px;
+}
+
+.project.unclaimed {
+    flex: 3;
+    background-color: var(--Medium-Grey);
+}
+
+.project.rendering {
+    flex: 3;
+    background-color: var(--green-800);
+}
+
+.project.api {
+    flex: 3;
+    background-color: var(--red-800);
+}

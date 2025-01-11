@@ -14,9 +14,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
     >
     <ng-content></ng-content>
       <mat-icon *ngIf="icon">{{ icon }}</mat-icon>
-
     </button>
-
+  
   `,
   styles: [
     `

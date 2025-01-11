@@ -52,8 +52,8 @@ export type columnChart = {
   color: string;
 };
 
-// SR & ED summary
-export type REDSummaryTableHeader = {
+
+export type TTableHeader = {
   field: string;
   cellRenderer?:unknown;
 };

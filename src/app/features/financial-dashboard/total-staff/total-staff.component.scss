@@ -1,52 +1,29 @@
 .chart-wrapper {
   display: flex;
-  align-content:stretch;
+  flex-flow: row wrap;
 
+  h2{
+    font-size: var(--font-size-medium); font-weight:normal; display:flex;
+    justify-content:space-between; width:100%;
+    mat-icon{
+      padding-right:5px;
+    }
+  }
   .card{
     border: solid 1px var(--white-background-200);
     background-color: var(--white-background-100);
     border-radius: 8px;
     padding: 15px;
-    width: 30%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .card2{
-    margin-left: 15px;
-    width: 100%;
     display: block;
-
   }
 
 }
 bar{
   width:100% !important;
-}
-.donut-per{
-  position: absolute;
-    transform: translate(-50%, -50%);
-    background-color:var(--Neutral-100);
-    padding: 12px 5px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: bold;
-    color: var(--charcoal-black);
-    border-radius: 52%;
-    margin: 89px 0 0 -104px;
-}
-.donut-per2{
-  position: absolute;
-    transform: translate(-50%, -50%);
-    background-color:var(--Neutral-100);
-    padding: 12px 5px;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: bold;
-    color: var(--charcoal-black);
-    border-radius: 52%;
-    margin: -147px 0 0 186px ;
-
 }
 
 @media screen and (max-width: 768px) {
@@ -54,8 +31,7 @@ bar{
     display: flex;
     padding:0;
     flex-wrap: wrap;
-    .card{width: 100%; margin-bottom: 15px; padding: 0; overflow: hidden;}
-    .card2{margin-left: 0;  }
+    .card{margin-left: 0; width: 100%; margin-bottom: 15px; padding: 0; overflow: hidden;}
   }
 }
 

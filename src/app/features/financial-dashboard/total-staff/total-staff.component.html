@@ -1,10 +1,18 @@
 <div class="chart-wrapper">
-  <div class="card2 card">
-    <app-bar-chart
-    [data]="barChart"
-    [series]="series"
-    [theme]="customTheme"
-    [chartsAdditional]="chartsAdditional"></app-bar-chart>
+  <h2>
+    <span><mat-icon>supervisor_account</mat-icon> {{subHeading}}</span> 
+    <span><mat-icon>edit</mat-icon> <mat-icon>delete</mat-icon></span>
+  </h2>
+  <div class="card">
+    @defer {
+      <app-bar-chart
+      [data]="barChartStaff"
+      [series]="series"
+      [theme]="customTheme"
+      [chartsAdditional]="chartsAdditional"></app-bar-chart>
+    } @placeholder {
+      <p>Loading...</p>
+    }
   </div>
 </div>
 

@@ -1,6 +1,4 @@
 import { Component, OnInit  } from '@angular/core';
-import "ag-grid-community/styles/ag-grid.css";
-import "ag-grid-community/styles/ag-theme-quartz.css";
 import { ScreenSizeService } from '../../shared/utilities/screen-size.service';
 
 @Component({

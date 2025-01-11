@@ -1,4 +1,6 @@
 import { Component, ViewChild, EventEmitter, Output } from '@angular/core';
+import "ag-grid-community/styles/ag-grid.css";
+import "ag-grid-community/styles/ag-theme-quartz.css";
 import { MatDrawer } from '@angular/material/sidenav';
 
 
