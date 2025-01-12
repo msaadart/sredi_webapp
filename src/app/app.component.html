@@ -1,10 +1,11 @@
 <mat-drawer-container class="container" autosize [hasBackdrop]="false">
-  <mat-drawer #drawer class="sidenav scroller" mode="side">
+  <mat-drawer #drawer class="sidenav scroller" mode="side" position="end">
     <app-side-bar></app-side-bar>
   </mat-drawer>
 
   <mat-drawer-content>
-    <app-header (toggleDrawer)="toggleDrawer()"></app-header>
+    <!-- <app-header (toggleDrawer)="toggleDrawer()"></app-header> -->
+    <app-header-financial-dashboard (toggleDrawer)="toggleDrawer()"></app-header-financial-dashboard>
     <router-outlet></router-outlet>
   </mat-drawer-content>
 

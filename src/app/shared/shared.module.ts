@@ -34,6 +34,8 @@ import { CardComponent } from './card/card.component';
 import { TableComponent } from './table/table.component';
 import { DonutChartComponent } from './chart/donut-chart.component';
 import { BarChartComponent } from './chart/bar-chart.component';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -47,6 +49,7 @@ import { BarChartComponent } from './chart/bar-chart.component';
     TableComponent,
     DonutChartComponent,
     BarChartComponent,
+    DialogComponent,
   ],
   imports: [
     CommonModule,
@@ -72,6 +75,7 @@ import { BarChartComponent } from './chart/bar-chart.component';
     MatButtonToggleModule, 
     MatCheckboxModule,
     MatBadgeModule,
+    MatDialogModule,
     AgCharts,
     AgGridAngular
   ],
@@ -103,6 +107,8 @@ import { BarChartComponent } from './chart/bar-chart.component';
     MatButtonToggleModule, 
     MatCheckboxModule,
     MatBadgeModule,
+    MatDialogModule,
+    DialogComponent,
   ]
 })
 export class SharedModule { }

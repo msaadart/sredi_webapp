@@ -1,0 +1,35 @@
+<mat-toolbar color="primary" class="header-toolbar">
+    <div class="left-section">
+        <div class="sredi-logo">
+            <img src="assets/images/sidebar/sredi.svg" alt="sredi">
+        </div>
+        <p>
+            For Support, Requests and/or suggestions <br> email success&#64;sred.io
+        </p>
+        <p>
+            <b>Active integrations (Jira)</b>
+        </p>
+    </div>
+    
+    <div class="center-section">
+        <div>
+            <mat-slide-toggle
+                class="example-margin"
+            >
+            Time Zone: EST
+            </mat-slide-toggle>
+        </div>
+        <div class="date-range" [ngClass]="{ 'show': !dateRange }">
+            <app-date-picker label="Fiscal Period" [isRange]="true" [startPlaceholder]="'Start date'"
+                [endPlaceholder]="'End date'">
+            </app-date-picker>
+        </div>
+    </div>
+
+    <div class="right-section">
+        <p>Logged in as xavier.ali&#64;sred.io</p>
+        <a (click)="onToggleDrawer()" class="right-slide-btn">
+            <mat-icon>menu</mat-icon>
+        </a>
+    </div>
+</mat-toolbar>
