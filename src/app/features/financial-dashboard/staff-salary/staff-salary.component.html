@@ -1,1 +1,16 @@
-<p>staff-salary works!</p>
+<mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+        <mat-expansion-panel-header>
+            <mat-panel-title>
+                <h2 class="sub-heading">
+                    <mat-icon>people</mat-icon> <span> Staff Salary</span>
+                </h2>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="body-panel">
+            <app-table style="width: 100%;" class="ag-theme-quartz" [rowData]="staffSalaryList"
+                [columnDefs]="staffSalaryHeader" [enablePagination]="false">
+            </app-table>
+        </div>
+    </mat-expansion-panel>
+</mat-accordion>

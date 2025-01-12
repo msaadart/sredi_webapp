@@ -1,5 +1,5 @@
 @defer {
-<div class="tabs">   
+<div class="tabs" *ngIf="selectiveProject.tabs">   
         <div *ngFor="let item of selectiveProject.quater; let isLast = last" [ngClass]="{'active': isLast}">
         <div>{{item.hours?item.hours + ' hours': '$' + item.amount}}<br>
             <small>{{item.start_Date}} / {{item.end_Date}}</small><br>
@@ -20,7 +20,7 @@
 </div>
 
 <!-- Projects Section -->
-<div class="projects">
+<div class="projects" *ngIf="selectiveProject.show_projects">
     <div class="projects-title">SR&ED Projects</div>
     <div class="project-bar">
         <div *ngFor="let item of selectiveProject.projects" class="project {{item.class_name}}">

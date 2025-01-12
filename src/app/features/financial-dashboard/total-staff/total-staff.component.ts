@@ -1,19 +1,22 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { barChartStaff, chartsAdditionalData } from '../financial-dashboard.type';
 import { FinancialServicesService } from '../financial-services.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogTotalStaffComponent } from '../dialog-total-staff/dialog-total-staff.component';
+import { DialogComponent } from '../../../shared/dialog/dialog.component';
 
 @Component({
   selector: 'app-total-staff',
   templateUrl: './total-staff.component.html',
   styleUrl: './total-staff.component.scss',
 })
-export class TotalStaffComponent implements OnInit{
+export class TotalStaffComponent implements OnInit {
 
-  @Input() subHeading:string = '';
+  @Input() subHeading: string = '';
 
   constructor(
-    private RequestService: FinancialServicesService,
-  ){}
+    private RequestService: FinancialServicesService, private dialog: MatDialog
+  ) { }
 
   barChartStaff: barChartStaff[] = [];
   ngOnInit(): void {
@@ -21,6 +24,21 @@ export class TotalStaffComponent implements OnInit{
       this.barChartStaff = data;
     });
   }
+
+  openModal(): void {
+    const dialogRef = this.dialog.open(DialogTotalStaffComponent, {
+      width: '1200px',
+      data: {
+        title: 'Anne User', 
+      }
+    });
+
+      dialogRef.afterClosed().subscribe(result => {
+        console.log('Dialog closed with result:', result);
+      });
+  }
+
+ 
 
   customTheme = {
     palette: {
@@ -66,14 +84,14 @@ export class TotalStaffComponent implements OnInit{
     },
   ];
 
-  chartsAdditional:chartsAdditionalData = {
-    shape:'circle',
-    axes_position:'left',
+  chartsAdditional: chartsAdditionalData = {
+    shape: 'circle',
+    axes_position: 'left',
     label_add_word: '',
-    bg_fill:'#FBFBFB',
+    bg_fill: '#FBFBFB',
     axes_left_title: 'SR&ED Hours',
     axes_center_title: 'SR&ED Employees and Contractors',
-    legend_position:'right'
-  } 
+    legend_position: 'right'
+  }
 
 }

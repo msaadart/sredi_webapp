@@ -1,0 +1,19 @@
+<mat-dialog-content>
+    <div class="dialog">
+        <div>{{data.title}}</div>
+        <div>
+            <mat-button-toggle-group name="favoriteColor" aria-label="Favorite Color"
+                (change)="selectiveData(group.value)" #group="matButtonToggleGroup" [value]="selectedDefualtValue">
+                <mat-button-toggle value="show_hours">Show Hours</mat-button-toggle>
+                <mat-button-toggle value="show_expenditures">Show Expenditures</mat-button-toggle>
+                <mat-button-toggle value="show_credits">Show Credits</mat-button-toggle>
+            </mat-button-toggle-group>
+        </div>
+    </div>
+    <app-sred-projections></app-sred-projections>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button (click)="close()">Close</button>
+    <button mat-raised-button color="primary" (click)="dialogRef.close('confirmed')">Confirm</button>
+</mat-dialog-actions>

@@ -46,6 +46,8 @@ export type DataSection = {
   full_year: string;
   projects: Project[];
   hours_status: boolean;
+  tabs?:boolean;
+  show_projects?:boolean;
 };
 
 export type Projections = {
@@ -62,20 +64,32 @@ export enum TProjectionType {
 
 export type TVendorInvoice = {
   invoice_submitted: string;
-  invoice_number: number; 
+  invoice_number: number;
   invoice_amount: number;
   vendor_name: string;
-  name_of_provider: string; 
+  name_of_provider: string;
   project: string;
-  description: string; 
+  description: string;
   is_SRED: string;
-  province: string; 
-  status: string
+  province: string;
+  status: string;
 };
 
 export type TTableHeader = {
   field?: string;
-  cellRenderer?:unknown;
-  headerName?:string;
-  suppressSorting?:boolean
+  cellRenderer?: unknown;
+  headerName?: string;
+  suppressSorting?: boolean
 };
+
+// staff salary
+export type TStaffSalary = {
+  name:string;
+  start_date:string;
+  end_date:string; 
+  expected_salary:number;
+  confirmed_salary_per_payroll: number; 
+  hourly_rate: number; 
+  hours_worked: number;
+  special_employee: boolean; 
+}

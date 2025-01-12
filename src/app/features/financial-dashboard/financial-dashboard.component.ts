@@ -33,13 +33,13 @@ export class FinancialDashboardComponent implements OnInit{
   selectiveData(value:string) {
     switch (value) {
       case TProjectionType.show_credits:
-        this.selectiveProject = this.projections[TProjectionType.show_credits]
+        this.selectiveProject = {...this.projections[TProjectionType.show_credits], tabs:true, show_projects:true}
         break;
       case TProjectionType.show_expenditures:
-        this.selectiveProject = this.projections[TProjectionType.show_expenditures]
+        this.selectiveProject = {...this.projections[TProjectionType.show_expenditures], tabs:true, show_projects:true}
         break;
       case TProjectionType.show_hours:
-        this.selectiveProject = this.projections[TProjectionType.show_hours]
+        this.selectiveProject = {...this.projections[TProjectionType.show_hours], tabs:true, show_projects:true}
         break;
     }
     this.childComponent.selectiveProject = this.selectiveProject;

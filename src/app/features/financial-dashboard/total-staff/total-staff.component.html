@@ -1,7 +1,7 @@
 <div class="chart-wrapper">
   <h2>
     <span><mat-icon>supervisor_account</mat-icon> {{subHeading}}</span> 
-    <span><mat-icon>edit</mat-icon> <mat-icon>delete</mat-icon></span>
+    <span><mat-icon (click)="openModal()" class="link">edit</mat-icon> <mat-icon>delete</mat-icon></span>
   </h2>
   <div class="card">
     @defer {

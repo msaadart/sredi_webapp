@@ -7,6 +7,7 @@ import { FinancialDashboardComponent } from './financial-dashboard.component';
 import { SredProjectionsComponent } from './sred-projections/sred-projections.component';
 import { VendorInvoicesComponent } from './vendor-invoices/vendor-invoices.component';
 import { StaffSalaryComponent } from './staff-salary/staff-salary.component';
+import { DialogTotalStaffComponent } from './dialog-total-staff/dialog-total-staff.component';
 
 
 
@@ -17,6 +18,7 @@ import { StaffSalaryComponent } from './staff-salary/staff-salary.component';
     SredProjectionsComponent,
     VendorInvoicesComponent,
     StaffSalaryComponent,
+    DialogTotalStaffComponent,
   ],
   imports: [
     CommonModule,

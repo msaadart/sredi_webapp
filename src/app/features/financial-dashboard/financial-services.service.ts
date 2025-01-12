@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import {
   barChartStaff,
   Projections,
+  TStaffSalary,
   TVendorInvoice
 } from './financial-dashboard.type';
 import { environment } from '../../../environments/environment.prod';
@@ -29,6 +30,11 @@ export class FinancialServicesService {
 
     getVendorInvoices(link:string): Observable<Array<TVendorInvoice>> {
       return this.http.get<TVendorInvoice[]>(`${this.url}/${link}`);
+    }
+
+    async getStaffSalary(link:string): Promise<TStaffSalary[]>{
+      const data = await fetch(`${this.url}/${link}`);
+      return (await data.json()) ?? [];
     }
   
 }

@@ -1,0 +1,15 @@
+.sub-heading {
+    font-size: var(--font-size-medium);
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .body-panel{
+    padding: 10px;
+  }
+
+  mat-icon {
+    padding-right: 5px;
+  }
