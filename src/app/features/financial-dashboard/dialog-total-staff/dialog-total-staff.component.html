@@ -10,10 +10,21 @@
             </mat-button-toggle-group>
         </div>
     </div>
+    <div class="flex-space-between">
+        <p>Date Range: Jan 1, Dec 31, 2021<br>
+            Province: ON</p>
+        <p>Hire Date: Jan 1, 2021<br> End Date: -</p>
+    </div>
+    <h4>SR&ED Projects</h4>
     <app-sred-projections></app-sred-projections>
+    <div>
+        <p>SR&ED Hours: 133</p>
+        <p>Total Hours: 2000</p>
+    </div>
+    <h3>SR&ED Allocation: 1.663%</h3>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-    <button mat-button (click)="close()">Close</button>
-    <button mat-raised-button color="primary" (click)="dialogRef.close('confirmed')">Confirm</button>
+    <!-- <button mat-button (click)="close()">Close</button> -->
+    <button mat-raised-button color="primary" (click)="dialogRef.close('confirmed')">Ok</button>
 </mat-dialog-actions>
